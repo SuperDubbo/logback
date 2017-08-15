@@ -65,6 +65,18 @@ public class LogUtils {
         StringBuilder s = new StringBuilder();
         s.append(message);
         log.error(s.toString());
+        try
+        {
+            int i=1/0;
+        }catch (Exception e){
+            log.error("1/0异常:",e);
+        }
+        try
+        {
+            int i=2/0;
+        }catch (Exception e){
+            log.error("2/0异常:{}",e);
+        }
     }
 
     /**
